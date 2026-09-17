@@ -1,11 +1,11 @@
 export default function Navbar(){
     return(
-        <nav className="h-[52px] bg-[#08080f]">
+        <nav className="h-[52px] bg-[#08080f] border-b border-gray-800 font-sans" >
             <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-6">
 
                 <div>
                     <a href="#" className="flex items-center">
-                        <img src="logo.png" alt="Pedalini" className="h-6 w-auto"/>  {/*Logo */}
+                        <img src="pedalinilogo.png" alt="Pedalini" className="h-6 w-auto"/>  {/*Logo */}
                     </a>
                 </div>
                 
