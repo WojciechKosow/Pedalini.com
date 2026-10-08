@@ -23,14 +23,14 @@ export default function Footer(){
 
                         <li>
                             <a 
-                            href="#" 
+                            href="/browsePage" 
                             className="text-xs text-[#85859b] transition-colors hover:text-white"
                             >Browse</a>
                         </li>
 
                         <li>
                             <a 
-                            href="#" 
+                            href="/help" 
                             className="text-xs text-[#85859b] transition-colors hover:text-white"
                             >Help</a>
                         </li>
