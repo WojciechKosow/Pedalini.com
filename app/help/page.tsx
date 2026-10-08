@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Link from "next/link";
 
 export default function Help() {
   const [answer1, setAnswer1] = useState(false);
@@ -15,6 +18,8 @@ export default function Help() {
   const [answer10, setAnswer10] = useState(false);
 
   return (
+    <>
+    <Navbar/>
     <section className="bg-[#08080f] py-24 md:py-32 text-[#85859b]">
       <div className="grid grid-cols-12">
         <div className="col-span-6 col-start-4">
@@ -22,12 +27,12 @@ export default function Help() {
           <p>Everything you need to know about using Pedalini</p>
 
           <div className="mt-8 flex gap-4">
-            <button className="bg-[#12121e] w-full h-35 rounded-xl">
-              Create Account
-            </button>
-            <button className="bg-[#12121e] w-full h-35 rounded-xl">
-              Browse courses
-            </button>
+            <Link href="/registerPage" className="bg-[#12121e] w-full h-35 rounded-xl flex items-center justify-center">
+                Create Account
+            </Link>
+            <Link href="/registerPage" className="bg-[#12121e] w-full h-35 rounded-xl flex items-center justify-center">
+                Browse courses
+            </Link>
             <button className="bg-[#12121e] w-full h-35 rounded-xl">
               My Library
             </button>
@@ -198,5 +203,7 @@ export default function Help() {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 }

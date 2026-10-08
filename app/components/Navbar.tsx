@@ -22,14 +22,14 @@ export default function Navbar(){
 
                         <li>
                             <a 
-                            href="#" 
+                            href="/browsePage" 
                             className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
                             >Browse</a>
                         </li> 
 
                         <li>
                             <a 
-                            href="#" 
+                            href="/help" 
                             className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
                             >Help</a>
                         </li>
