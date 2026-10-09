@@ -15,7 +15,7 @@ export default function Navbar(){
                     <ul className="flex items-center gap-1">
                         <li>
                             <a 
-                            href="#" 
+                            href="/" 
                             className="rounded-lg bg-[#101b1e] px-3 py-2 text-sm font-medium text-[#14b8a6]"
                             >Home</a>
                         </li>
