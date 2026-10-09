@@ -1,5 +1,6 @@
 export default function Navbar(){
     return(
+        
         <nav className="h-[52px] bg-[#08080f] border-b border-gray-800 font-sans" >
             <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-6">
                
