@@ -1,9 +1,5 @@
-import LoginNavbar from "./components/loginnavbar";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
-  return (
-    <main>
-      <LoginNavbar />
-    </main>
-  );
+  return <main></main>;
 }
