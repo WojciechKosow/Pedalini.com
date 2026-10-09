@@ -1,7 +1,16 @@
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import LandingPage from "./LandingPage/landingpage";
 
 export default function Page() {
     return (
-        <LandingPage />
+        <>
+            <Navbar />
+
+            <LandingPage />
+
+            <Footer /> 
+        </>
     );
 }
+

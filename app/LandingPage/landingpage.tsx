@@ -97,19 +97,24 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Tutaj ostatnio dodane pzdr */}
+            <section className="bg-[#08080f] font-sans border-t border-[#15151f]">
+                <div className="container mx-auto py-20 max-w-[1120px]">
+                    <h2 className="text-2xl font-bold text-white">Just added</h2>
+                    Tutaj dodać ostatnio dodane pzdr
+                </div>
+            </section>
             {/*Tutaj odnośnik do logowania każdy widzi*/}
             <section className="bg-[#08080f] font-sans border-t border-[#15151f]">
-                <div className="container mx-auto max-w-[1120px] grid grid-cols-1 sm:grid-cols-4 text-center">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 py-6">
-                        <h2 className="text-3xl font-bold text-white">Ready to share your expertise?</h2>
-                        <p className="mt-3 text-[#85859b]">Join thousands of instructors earning income by teaching what they know.</p>
-                        <div className="mt-8 flex justify-center gap-3">
-                            <a
-                                href="/registerPage"
-                                className="h-11 px-6 flex items-center justify-center rounded-xl bg-[#14b8a6] text-sm font-medium text-[#07100f] transition-colors hover:bg-[#2dd4bf]">
-                                Create your free account
-                            </a>
-                        </div>
+                <div className="container mx-auto max-w-[1120px] px-4 py-20 text-center">
+                    <h2 className="text-3xl font-bold text-white">Ready to share your expertise?</h2>
+                    <p className="mt-3 text-[#85859b]">Join thousands of instructors earning income by teaching what they know.</p>
+                    <div className="mt-8 flex justify-center gap-3">
+                        <a href="/registerPage"
+                            className="h-11 px-6 flex items-center justify-center rounded-xl bg-[#14b8a6] text-sm font-medium text-[#07100f] transition-colors hover:bg-[#2dd4bf]">
+                            Create your free account
+                        </a>
                     </div>
                 </div>
             </section>
