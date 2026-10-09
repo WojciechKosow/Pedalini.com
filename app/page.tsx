@@ -1,5 +1,9 @@
-import Help from "./help/page";
+import LoginNavbar from "./components/loginnavbar";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <LoginNavbar />
+    </main>
+  );
 }
