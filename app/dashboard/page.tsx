@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Navbar from "../components/Navbar";
+import LoginNavbar from "../components/loginnavbar";
 import Footer from "../components/Footer";
 
-const USER = { name: "Maciek Psikutas", email: "maciekpsikutas67@gmail.com", bio: "Senior UX designer with 12 years at top tech firms. I teach design thinking and prototyping." };
+const USER = { name: "Marcin Majkut", email: "marcinmajkut67@gmail.com", bio: "Senior UX designer with 12 years at top tech firms. I teach design thinking and prototyping." };
 
 const STATS = [
     { label: "Enrolled", value: "0" },
@@ -18,7 +18,6 @@ export default function DashboardPage() {
     const router = useRouter();
     const [ready, setReady] = useState(false);
 
-    // Prosty guard: bez zalogowania na konto demo wracamy do logowania
     useEffect(() => {
         let ok = false;
         try {
@@ -42,7 +41,7 @@ export default function DashboardPage() {
 
     return (
         <div className="min-h-screen bg-[#08080f] font-sans text-white">
-            <Navbar />
+            <LoginNavbar />
             <main className="container mx-auto max-w-[740px] px-4 py-10">
 
                 {/* Profile */}
@@ -76,7 +75,7 @@ export default function DashboardPage() {
                         My Library
                     </a>
                     <a
-                        href="#"
+                        href="/createPage"
                         className="flex h-10 items-center rounded-lg border border-[#24243a] bg-[#0d0d17] px-4 text-sm text-[#85859b] transition-colors hover:border-[#14b8a6] hover:text-white"
                     >
                         Create course

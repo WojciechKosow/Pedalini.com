@@ -36,8 +36,8 @@ export default function LandingPage() {
 
             {/*Lekkie menu tutaj pod każdy widzi pod co*/}
             <section className="bg-[#08080f] font-sans border-t border-[#15151f]">
-                <div className="container mx-auto py-10 max-w-[1120px]">
-                    <div className="rounded-xl border border-[#24243a] bg-[#12121e] grid grid-cols-1 sm:grid-cols-4 gap-6 text-center sm:text-left">
+                <div className="container mx-auto py-10 px-10 max-w-[1120px]">
+                    <div className="rounded-xl grid grid-cols-1 sm:grid-cols-4 gap-6 text-center sm:text-left" >
                         <div>
                             <p className="font-mono tabular-nums text-4xl text-white">-</p>
                             <p className="mt-1 text-sm text-[#85859b]">Courses published</p>
