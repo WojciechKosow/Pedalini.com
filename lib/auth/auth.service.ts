@@ -27,14 +27,9 @@ export class AuthService {
       createdAt: new Date(),
     });
 
-    const accessToken = await createAccessToken(user.id);
-
     return {
-      user: {
-        id: user.id,
-        email: user.email,
-      },
-      accessToken,
+      id: user.id,
+      email: user.email,
     };
   }
 
