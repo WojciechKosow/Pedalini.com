@@ -34,7 +34,7 @@ export default function Help() {
                 Create Account
               </Link>
               <Link
-                href="/registerPage"
+                href="/browsePage"
                 className="bg-[#12121e] w-full h-35 rounded-xl flex items-center justify-center"
               >
                 Browse courses

@@ -48,6 +48,7 @@ const courses = [
 export default function BrowsePage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("Most Popular");
 
   const filteredCourses = courses.filter((course) => {
     const matchesCategory =
@@ -63,6 +64,30 @@ export default function BrowsePage() {
       course.level.toLowerCase().includes(query);
 
     return matchesCategory && matchesSearch;
+  });
+
+  const sortedCourses = [...filteredCourses].sort((a, b) => {
+    switch (sortBy) {
+      case "Highest Rated":
+        return b.rating - a.rating;
+        break;
+
+      case "Price: Low to High":
+        return a.price - b.price;
+        break;
+
+      case "Price: High to Low":
+        return b.price - a.price;
+        break;
+
+      case "Newest":
+        return 0;
+        break;
+
+      case "Most Popular":
+      default:
+        return Number(b.trending) - Number(a.trending);
+    }
   });
   return (
     <>
@@ -111,7 +136,8 @@ export default function BrowsePage() {
             </p>
 
             <select
-              defaultValue="Most Popular"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
               className="rounded-lg border border-[#29293d] bg-[#12121e] px-4 py-2 text-sm text-white outline-none transition-colors focus:border-[#14b8a6]"
             >
               <option value="Most Popular">Most Popular</option>
@@ -123,7 +149,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredCourses.map((course) => (
+            {sortedCourses.map((course) => (
               <Kurs key={course.title} {...course} />
             ))}
           </div>
