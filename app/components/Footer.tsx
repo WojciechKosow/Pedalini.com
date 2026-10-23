@@ -1,3 +1,4 @@
+
 export default function Footer() {
   return (
     <footer className="h-[52px] border-t border-gray-800 bg-[#08080f] ">
@@ -9,6 +10,7 @@ export default function Footer() {
             <p className="text-white">lini</p>
           </div>
         </div>
+
 
         {/* Navigation */}
         <div>
