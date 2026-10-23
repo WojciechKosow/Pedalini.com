@@ -1,3 +1,14 @@
-export default function HomePage() {
-  return <></>;
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import LandingPage from "./LandingPage/landingpage";
+
+export default function Page() {
+    return (
+        <>
+            <Navbar />
+            <LandingPage />
+            <Footer /> 
+        </>
+    );
 }
+
