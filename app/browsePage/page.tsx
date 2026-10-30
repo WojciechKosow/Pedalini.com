@@ -4,11 +4,14 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Kurs from "../components/kurs";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 import { courses } from "../data/courses";
 import { useCourses } from "../hooks/useCourses";
 
 export default function BrowsePage() {
+  const searchParams = useSearchParams();
   const {
     categories,
     selectedCategory,
@@ -20,6 +23,14 @@ export default function BrowsePage() {
     filteredCourses,
     sortedCourses,
   } = useCourses(courses);
+
+  useEffect(() => {
+    const category = searchParams.get("category");
+
+    if(category){
+      setSelectedCategory(category);
+    }
+  }, [searchParams, setSelectedCategory]);
 
   return (
     <>

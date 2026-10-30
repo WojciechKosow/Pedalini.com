@@ -9,7 +9,8 @@ export type Course = {
     trending: boolean;
     creatorName: string;
     creatorAvatar: string;
-    createdAt?:string;
+    createdAt:string;
+    duration: number;
 };
 
 export type CourseSortOption =

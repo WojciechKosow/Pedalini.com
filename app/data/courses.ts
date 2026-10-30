@@ -14,6 +14,7 @@ export const courses: Course[] = [
     creatorName: "Marcus Chen",
     creatorAvatar: "https://i.pravatar.cc/100?img=12",
     createdAt: "2026-09-15",
+    duration: 8,
   },
 
   {
@@ -29,5 +30,6 @@ export const courses: Course[] = [
     creatorName: "Priya Nair",
     creatorAvatar: "https://i.pravatar.cc/100?img=47",
     createdAt: "2026-09-15",
+    duration: 12,
   },
 ];
