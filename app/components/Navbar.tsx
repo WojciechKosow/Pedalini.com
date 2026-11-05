@@ -1,5 +1,6 @@
 export default function Navbar(){
     return(
+        
         <nav className="h-[52px] bg-[#08080f] border-b border-gray-800 font-sans" >
             <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-6">
                
@@ -15,21 +16,21 @@ export default function Navbar(){
                     <ul className="flex items-center gap-1">
                         <li>
                             <a 
-                            href="#" 
+                            href="/" 
                             className="rounded-lg bg-[#101b1e] px-3 py-2 text-sm font-medium text-[#14b8a6]"
                             >Home</a>
                         </li>
 
                         <li>
                             <a 
-                            href="#" 
+                            href="/browsePage" 
                             className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
                             >Browse</a>
                         </li> 
 
                         <li>
                             <a 
-                            href="#" 
+                            href="/help" 
                             className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
                             >Help</a>
                         </li>

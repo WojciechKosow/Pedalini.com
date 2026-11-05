@@ -131,7 +131,6 @@ export default function RegisterPage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         { status: 401 },
       );
     }
-
+ 
     console.error("[AUTH LOGIN]", error);
 
     return NextResponse.json(
