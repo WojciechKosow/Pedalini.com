@@ -39,9 +39,7 @@ export default function Help() {
               >
                 Browse courses
               </Link>
-              <button className="bg-[#12121e] w-full h-35 rounded-xl">
-                My Library
-              </button>
+              <button className=" ">My Library</button>
               <button className="bg-[#12121e] w-full h-35 rounded-xl">
                 Create course
               </button>

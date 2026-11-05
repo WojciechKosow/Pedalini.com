@@ -2,6 +2,7 @@ import type { Course } from "../types/course";
 
 export const courses: Course[] = [
     {
+    slug: "react-typescript",
     title: "React 19 & TypeScript: Build Production-Grade Apps",
     description:
       "Learn modern React development with TypeScript and industry best practices.",
@@ -18,6 +19,7 @@ export const courses: Course[] = [
   },
 
   {
+    slug: "machine-learning",
     title: "Machine Learning Fundamentals with Python",
     description:
       "Learn to build machine learning models with practical Python examples.",

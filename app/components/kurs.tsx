@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 type CourseCardProps = {
+  slug: string;
   title: string;
   description: string;
   category: string;
@@ -12,6 +15,7 @@ type CourseCardProps = {
 };
 
 const CourseCard = ({
+  slug,
   title,
   description,
   category,
@@ -26,6 +30,7 @@ const CourseCard = ({
   const stars = Math.min(5, Math.max(0, Math.round(rating)));
 
   return (
+    <Link className="block h-full" href={`/coursePage/${slug}`}>
     <article className="group flex flex-col overflow-hidden rounded-xl bg-[#13141f] transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60">
       <div className="relative aspect-[2/1] overflow-hidden bg-[#0d0f1a]">
         <img
@@ -79,6 +84,7 @@ const CourseCard = ({
         </div>
       </div>
     </article>
+    </Link>
   );
 };
 
