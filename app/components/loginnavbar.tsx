@@ -19,7 +19,7 @@ const loginnavbar = () => {
             <ul className="flex items-center gap-1">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
                 >
                   Home
