@@ -54,7 +54,7 @@ export default function LandingPage() {
               </p>
               <p className="mt-1 text-sm text-[#85859b]">Courses published </p>
             </div>
-            <div>
+            <div className="text-center">
               <p className="font-mono tabular-nums text-4xl text-white">-</p>
               <p className="mt-1 text-sm text-[#85859b]">Active learners</p>
             </div>

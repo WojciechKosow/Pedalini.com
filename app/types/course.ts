@@ -12,6 +12,14 @@ export type Course = {
     creatorAvatar: string;
     createdAt:string;
     duration: number;
+    lessons: number;
+    curriculum: Lesson[];
+};
+
+export type Lesson = {
+    title: string;
+    duration: string;
+    preview: boolean;
 };
 
 export type CourseSortOption =

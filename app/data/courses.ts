@@ -16,6 +16,35 @@ export const courses: Course[] = [
     creatorAvatar: "https://i.pravatar.cc/100?img=12",
     createdAt: "2026-09-15",
     duration: 8,
+    lessons: 5,
+
+    curriculum: [
+    {
+      title: "Introduction to React",
+      duration: "10:20",
+      preview: true,
+    },
+    {
+      title: "Smart Animate Deep Dive",
+      duration: "32:10",
+      preview: false,
+    },
+    {
+      title: "Interactive Components",
+      duration: "28:45",
+      preview: false,
+    },
+    {
+      title: "Building a React Application",
+      duration: "55:30",
+      preview: false,
+    },
+    {
+      title: "Final Project",
+      duration: "16:00",
+      preview: false,
+    },
+  ], 
   },
 
   {
@@ -33,5 +62,57 @@ export const courses: Course[] = [
     creatorAvatar: "https://i.pravatar.cc/100?img=47",
     createdAt: "2026-09-15",
     duration: 12,
+    lessons: 10,
+    curriculum: [
+  {
+    title: "Introduction to Machine Learning",
+    duration: "12:30",
+    preview: true,
+  },
+  {
+    title: "Python for Machine Learning",
+    duration: "24:45",
+    preview: false,
+  },
+  {
+    title: "NumPy and Pandas Fundamentals",
+    duration: "32:15",
+    preview: false,
+  },
+  {
+    title: "Data Preprocessing",
+    duration: "28:40",
+    preview: false,
+  },
+  {
+    title: "Supervised Learning",
+    duration: "35:20",
+    preview: false,
+  },
+  {
+    title: "Linear Regression",
+    duration: "26:10",
+    preview: false,
+  },
+  {
+    title: "Classification Algorithms",
+    duration: "31:45",
+    preview: false,
+  },
+  {
+    title: "Decision Trees and Random Forests",
+    duration: "29:30",
+    preview: false,
+  },
+  {
+    title: "Model Evaluation",
+    duration: "22:15",
+    preview: false,
+  },
+  {
+    title: "Final Machine Learning Project",
+    duration: "37:30",
+    preview: false,
+  },],
   },
 ];
