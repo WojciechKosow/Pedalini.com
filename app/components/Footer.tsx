@@ -1,7 +1,7 @@
 
 export default function Footer() {
   return (
-    <footer className="h-[52px] border-t border-gray-800 bg-[#08080f] ">
+    <footer className="h-[52px] border-t border-gray-800 bg-[#08080f] py-12">
       <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-6">
         {/* Pedalini text */}
         <div className="font-bold">
