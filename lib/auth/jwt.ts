@@ -1,21 +1,21 @@
 import { SignJWT, jwtVerify } from "jose";
+
 const secret = process.env.JWT_SECRET;
 
-if (!secret) {
-  throw new Error("JWT_SECRTET is not configured.");
+if (!secret || new TextEncoder().encode(secret).length < 32) {
+  throw new Error("JWT_SECRET must be set to at least 32 bytes.");
 }
 
 const secretKey = new TextEncoder().encode(secret);
 
 export async function createAccessToken(userId: string) {
   return new SignJWT({
-    sub: userId,
     type: "access",
   })
     .setProtectedHeader({
       alg: "HS256",
-      typ: "JWT",
     })
+    .setSubject(userId)
     .setIssuedAt()
     .setExpirationTime("15m")
     .setIssuer("pedalini.com")
