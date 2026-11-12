@@ -16,7 +16,7 @@ export default function FAQItem({ question, answer }: FAQitem) {
     <div className="border-b border-[#292938] bg-[#141420] rounded-md">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-4 text-white text-sm font-semibold">
+        className="w-full flex items-center justify-between p-4 text-white text-sm">
         {question}
 
         <Image
