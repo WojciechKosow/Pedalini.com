@@ -1,13 +1,17 @@
-const loginnavbar = () => {
+type LoginNavbarProps = {
+  name: string;
+};
+
+const loginnavbar = ({ name }: LoginNavbarProps) => {
   return (
     <div>
       <nav className="h-[52px] bg-[#08080f] border-b border-gray-800 font-sans">
         <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-6">
           {/*Logo */}
           <div>
-            <a href="#" className="flex items-center">
+            <a href="/" className="flex items-center">
               <img
-                src="pedalinilogo.png"
+                src="/pedalinilogo.png"
                 alt="Pedalini"
                 className="h-6 w-auto"
               />
@@ -20,7 +24,7 @@ const loginnavbar = () => {
               <li>
                 <a
                   href="/"
-                  className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
+                  className="rounded-lg bg-[#101b1e] px-3 py-2 text-sm font-medium text-[#14b8a6]"
                 >
                   Home
                 </a>
@@ -55,7 +59,7 @@ const loginnavbar = () => {
 
               <li>
                 <a
-                  href="#"
+                  href="/help"
                   className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
                 >
                   Help
@@ -68,18 +72,20 @@ const loginnavbar = () => {
           <div>
             <div className="flex items-center gap-5">
               <a
-                href="/dashboard"
-                className="text-sm text-[#85859b] transition-colors hover:text-white"
+                href="/"
+                className="text-sm font-medium text-white transition-colors hover:text-[#14b8a6]"
               >
-                Nazwa Uzytkownika nie wiem jak to zrobic
+                {name}
               </a>
 
-              <a
-                href="#"
-                className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white"
-              >
-                Sign out
-              </a>
+              <form action="/api/auth/logout" method="POST">
+                <button
+                  type="submit"
+                  className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white cursor-pointer"
+                >
+                  Logout
+                </button>
+              </form>
             </div>
           </div>
         </div>

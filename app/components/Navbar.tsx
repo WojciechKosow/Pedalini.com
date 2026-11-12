@@ -6,8 +6,8 @@ export default function Navbar(){
                
                 {/*Logo */}
                 <div>
-                    <a href="#" className="flex items-center">
-                        <img src="pedalinilogo.png" alt="Pedalini" className="h-6 w-auto"/>  
+                    <a href="/" className="flex items-center">
+                        <img src="/pedalinilogo.png" alt="Pedalini" className="h-6 w-auto"/>  
                     </a>
                 </div>
 
@@ -49,7 +49,7 @@ export default function Navbar(){
                         <a 
                             href="/registerPage" 
                             className="rounded-lg bg-[#14b8a6] px-4 py-2 text-sm font-medium text-[#07100f] transition-colors hover:bg-[#2dd4bf]"
-                            >Register</a>
+                            >Get started</a>
                     </div>
                 </div>
 

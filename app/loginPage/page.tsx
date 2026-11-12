@@ -17,6 +17,7 @@ export default function LoginPage() {
   type AuthResponse = {
     user?: {
       id: string;
+      name: string;
       email: string;
     };
     error?: string;
@@ -66,7 +67,7 @@ export default function LoginPage() {
       }
 
       // The HTTP-only cookie is set by the API.
-      router.push("/dashboard");
+      router.push("/");
       router.refresh();
     } catch {
       setError("Unable to connect to the server.");
