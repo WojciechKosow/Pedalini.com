@@ -9,7 +9,7 @@ import { createAccessToken } from "./jwt";
 export class AuthService {
   constructor(private readonly users: UserRepository) {}
 
-  async register(email: string, password: string) {
+  async register(name: string, email: string, password: string) {
     const normalizedEmail = email.trim().toLowerCase();
 
     const existing = await this.users.findByEmail(normalizedEmail);
@@ -22,6 +22,7 @@ export class AuthService {
 
     const user = await this.users.create({
       id: randomUUID(),
+      name: name.trim(),
       email: normalizedEmail,
       passwordHash,
       createdAt: new Date(),
@@ -29,6 +30,7 @@ export class AuthService {
 
     return {
       id: user.id,
+      name: user.name,
       email: user.email,
     };
   }
@@ -53,6 +55,7 @@ export class AuthService {
     return {
       user: {
         id: user.id,
+        name: user.name,
         email: user.email,
       },
       accessToken,
@@ -68,6 +71,7 @@ export class AuthService {
 
     return {
       id: user.id,
+      name: user.name,
       email: user.email,
     };
   }

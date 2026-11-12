@@ -1,15 +1,23 @@
 import Footer from "../components/Footer";
 import LoginNavbar from "../components/loginnavbar";
+import { getCurrentUser } from "@/lib/auth/current-user";
+import { redirect } from "next/navigation";
 
 const inputClass = "w-full rounded-xl border border-white bg-[#12121c] px-4 py-3 text-white placeholder:text-[#5f5f78] focus:outline-none focus:border-[#14b8a6]";
 const labelClass = "block mb-2 text-sm text-white";
 const categories = ["Design", "Engineering", "Data Science", "Creative", "Business", "Photography"];
 const levels = ["Beginner", "Indermediate", "Advanced"];
 
-export default function CreatePage() {
+export default async function CreatePage() {
+    const user = await getCurrentUser();
+
+    if (!user) {
+        redirect("/loginPage");
+    }
+
     return (
         <div className="min-h-screen flex flex-col">
-            <LoginNavbar />
+            <LoginNavbar name={user.name} />
 
             <main className="flex-1 px-4 py-16">
                 <div className="mx-auto w-full max-w-[650px]">

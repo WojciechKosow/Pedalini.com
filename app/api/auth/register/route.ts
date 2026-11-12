@@ -6,6 +6,7 @@ import { authService } from "@/lib/auth/container";
 export const runtime = "nodejs";
 
 const registerSchema = z.object({
+  name: z.string().trim().min(2).max(100),
   email: z.string().trim().email().max(254),
   password: z.string().min(8).max(128),
 });
@@ -27,6 +28,7 @@ export async function POST(request: Request) {
 
   try {
     const user = await authService.register(
+      parsed.data.name,
       parsed.data.email,
       parsed.data.password,
     );

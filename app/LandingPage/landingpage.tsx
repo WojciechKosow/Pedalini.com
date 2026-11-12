@@ -1,12 +1,21 @@
-export default function LandingPage() {
+type LandingPageProps = {
+    name?: string;
+};
+
+export default function LandingPage({ name }: LandingPageProps) {
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="flex-1 flex flex-col">
             {/*Góra strony*/}
             <section className="bg-[#08080f] font-sans">
                 <div className="container mx-auto py-20 max-w-[1120px]">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                         <div>
+                            {name && (
+                                <p className="mb-4 text-sm text-[#85859b]">
+                                    Welcome back, <span className="text-white font-medium">{name}</span>
+                                </p>
+                            )}
                             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
                                 Learn anything.
                             </h1>
@@ -19,12 +28,12 @@ export default function LandingPage() {
 
                             <div className="mt-8 flex flex-wrap items-center gap-3">
                                 <a
-                                    href="/browse"
+                                    href="/browsePage"
                                     className="h-11 px-6 flex items-center justify-center rounded-xl bg-[#14b8a6] text-sm font-medium text-[#07100f] transition-colors hover:bg-[#2dd4bf]">
                                     Browse courses
                                 </a>
                                 <a
-                                    href="/registerPage"
+                                    href={name ? "/createPage" : "/registerPage"}
                                     className="h-11 px-6 flex items-center justify-center rounded-xl border border-[#24243a] text-sm font-medium text-white transition-colors hover:border-[#14b8a6]">
                                     Teach a course
                                 </a>
@@ -106,6 +115,7 @@ export default function LandingPage() {
                 </div>
             </section>
             {/*Tutaj odnośnik do logowania każdy widzi*/}
+            {!name && (
             <section className="bg-[#08080f] font-sans border-t border-[#15151f]">
                 <div className="container mx-auto max-w-[1120px] px-4 py-20 text-center">
                     <h2 className="text-3xl font-bold text-white">Ready to share your expertise?</h2>
@@ -118,6 +128,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
+            )}
         </div>
     );
 }

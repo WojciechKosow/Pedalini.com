@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 export default function RegisterPage() {
   const router = useRouter();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,7 +27,7 @@ export default function RegisterPage() {
           "Content-Type": "application/json",
         },
         credentials: "same-origin",
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
       });
 
       const result = await response.json();
@@ -36,7 +37,7 @@ export default function RegisterPage() {
           setError("An account with this email already exists.");
         } else if (result.error === "INVALID_INPUT") {
           setError(
-            "Enter a valid email and a password of at least 8 characters.",
+            "Enter your name, a valid email and a password of at least 8 characters.",
           );
         } else {
           setError("Something went wrong. Please try again.");
@@ -88,6 +89,20 @@ export default function RegisterPage() {
             </div>
 
             <form onSubmit={handleSubmit} className="my-6 flex flex-col gap-3">
+              <input
+                type="text"
+                name="name"
+                autoComplete="name"
+                placeholder="Name"
+                aria-label="Name"
+                minLength={2}
+                maxLength={100}
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+                className="h-11 w-full px-4 text-white bg-[#12121e] border border-[#24243a] focus:border-[#14b8a6] focus:outline-none rounded-xl"
+              />
+
               <input
                 type="email"
                 name="email"
