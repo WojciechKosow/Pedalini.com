@@ -9,7 +9,7 @@ const categories = [
   "Data science",
   "Creative",
   "Business",
-  "Photography",
+  "Extreme Porn!!!!",
 ];
 
 const courses = [
