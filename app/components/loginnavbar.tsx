@@ -2,14 +2,23 @@
 
 import { usePathname } from "next/navigation";
 
-export default function Navbar() {
+type LoginNavbarProps = {
+  name: string;
+};
+
+export default function LoginNavbar({ name }: LoginNavbarProps) {
   const pathname = usePathname();
+
   const isHomePage = pathname === "/";
   const isBrowsePage = pathname === "/browsePage";
+  const isLibraryPage = pathname === "/library";
+  const isCreatePage = pathname === "/createPage";
   const isHelpPage = pathname === "/help";
+
   return (
     <nav className="h-[52px] bg-[#08080f] border-b border-gray-800 font-sans">
       <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-6">
+
         {/* Logo + nazwa */}
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center">
@@ -26,7 +35,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/*Options (home, browse, help) */}
+        {/* Navigation */}
         <div>
           <ul className="flex items-center gap-1">
             <li>
@@ -57,9 +66,9 @@ export default function Navbar() {
 
             <li>
               <a
-                href="/"
+                href="/library"
                 className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  isBrowsePage
+                  isLibraryPage
                     ? "bg-[#101b1e] text-[#14b8a6]"
                     : "text-[#85859b] hover:text-white"
                 }`}
@@ -70,9 +79,9 @@ export default function Navbar() {
 
             <li>
               <a
-                href="/"
+                href="/createPage"
                 className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  isBrowsePage
+                  isCreatePage
                     ? "bg-[#101b1e] text-[#14b8a6]"
                     : "text-[#85859b] hover:text-white"
                 }`}
@@ -86,7 +95,7 @@ export default function Navbar() {
                 href="/help"
                 className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   isHelpPage
-                    ? "bg-[#101b1e] text-[#14b8a6]"
+                    ? "bg-[#101b1e] text-[#14b8b8]"
                     : "text-[#85859b] hover:text-white"
                 }`}
               >
@@ -96,24 +105,25 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/*Buttons Profil i Sign out */}
-        <div>
-          <div className="flex items-center gap-5">
-            <a
-              href="/loginPage"
-              className="text-sm text-[#85859b] transition-colors hover:text-white"
-            >
-              User_Name
-            </a>
+        {/* Profile and Logout */}
+        <div className="flex items-center gap-5">
+          <a
+            href="/"
+            className="text-sm font-medium text-white transition-colors hover:text-[#14b8a6]"
+          >
+            {name}
+          </a>
 
-            <a
-              href="/loginPage"
-              className="text-sm text-[#85859b] transition-colors hover:text-white"
+          <form action="/api/auth/logout" method="POST">
+            <button
+              type="submit"
+              className="rounded-lg px-3 py-2 text-sm text-[#85859b] transition-colors hover:text-white cursor-pointer"
             >
-              Sign out
-            </a>
-          </div>
+              Logout
+            </button>
+          </form>
         </div>
+
       </div>
     </nav>
   );
