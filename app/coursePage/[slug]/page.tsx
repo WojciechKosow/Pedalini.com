@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { courses } from "../../data/courses";
 import { notFound } from "next/navigation";
@@ -22,7 +21,6 @@ export default async function CoursePage({ params }: Props) {
 
   return (
     <>
-      <Navbar />
 
       <section className="bg-[#08080f] py-24 md:py-32 text-[#85859b]">
         <div className="max-w-6xl mx-auto px-4">

@@ -15,7 +15,7 @@ export default async function CreatePage() {
     }
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-[#08080f]">
 
             <main className="flex-1 px-4 py-16">
                 <div className="mx-auto w-full max-w-[650px]">
