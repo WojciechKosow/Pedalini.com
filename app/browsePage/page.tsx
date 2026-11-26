@@ -1,6 +1,9 @@
+"use client";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Kurs from "../components/kurs";
+import { useState } from "react";
 
 const categories = [
   "All",
@@ -43,6 +46,24 @@ const courses = [
 ];
 
 export default function BrowsePage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCourses = courses.filter((course) => {
+    const matchesCategory =
+      selectedCategory === "All" || course.category === selectedCategory;
+
+    const query = searchQuery.trim().toLowerCase();
+
+    const matchesSearch =
+      course.title.toLowerCase().includes(query) ||
+      course.description.toLowerCase().includes(query) ||
+      course.category.toLowerCase().includes(query) ||
+      course.creatorName.toLowerCase().includes(query) ||
+      course.level.toLowerCase().includes(query);
+
+    return matchesCategory && matchesSearch;
+  });
   return (
     <>
       <Navbar />
@@ -56,29 +77,38 @@ export default function BrowsePage() {
             </span>
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by title, category, creator..."
               className="h-12 w-full rounded-xl border border-[#24243a] bg-[#12121e] pl-11 pr-4 text-sm text-white outline-none placeholder:text-[#777797] focus:border-[#14b8a6]"
             />
           </div>
 
           <div className="mb-8 flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                className={`rounded-lg border px-3 py-2 text-sm transition-colors ${
-                  category === "All"
-                    ? "border-[#14b8a6] bg-[#14b8a6] text-[#071313]"
-                    : "border-[#29293d] bg-[#12121e] text-[#9293b5] hover:border-[#3b3b55] hover:text-white"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`rounded-lg border px-3 py-2 text-sm transition-colors ${
+                    isActive
+                      ? "border-[#14b8a6] bg-[#14b8a6] text-[#071313]"
+                      : "border-[#29293d] bg-[#12121e] text-[#9293b5] hover:border-[#3b3b55] hover:text-white"
+                  }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
           </div>
 
           <div className="mb-5 flex items-center justify-between gap-4">
-            <p className="text-sm text-[#9293b5]">{courses.length} courses</p>
+            <p className="text-sm text-[#9293b5]">
+              {filteredCourses.length} courses
+            </p>
 
             <select
               defaultValue="Most Popular"
@@ -93,7 +123,7 @@ export default function BrowsePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {courses.map((course) => (
+            {filteredCourses.map((course) => (
               <Kurs key={course.title} {...course} />
             ))}
           </div>
