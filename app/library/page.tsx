@@ -1,10 +1,9 @@
-import Navbar from "@/app/components/Navbar";
+
 import Footer from "@/app/components/Footer";
 
 export default function LibraryPage() {
     return (
         <div className="min-h-screen flex flex-col">
-            <Navbar />
 
             <section className="flex-1 bg-[#08080f] font-sans text-white">
                 <div className="container mx-auto max-w-[1120px] px-4 py-10">

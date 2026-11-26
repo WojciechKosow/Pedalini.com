@@ -1,5 +1,4 @@
 import Footer from "../components/Footer";
-import LoginNavbar from "../components/loginnavbar";
 import { getCurrentUser } from "@/lib/auth/current-user";
 import { redirect } from "next/navigation";
 
@@ -17,7 +16,6 @@ export default async function CreatePage() {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <LoginNavbar name={user.name} />
 
             <main className="flex-1 px-4 py-16">
                 <div className="mx-auto w-full max-w-[650px]">

@@ -1,7 +1,6 @@
 
 "use client";
 
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Kurs from "../components/kurs";
 import { useSearchParams } from "next/navigation";
@@ -34,7 +33,7 @@ export default function BrowsePage() {
 
   return (
     <>
-      <Navbar />
+
 
       <main className="min-h-screen bg-[#08080f] text-white">
         <div className="mx-auto max-w-[1120px] px-6 py-8">

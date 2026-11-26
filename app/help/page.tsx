@@ -1,7 +1,6 @@
 
 "use client";
 
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import FAQItem from "../scripts/FAQitem";
@@ -9,7 +8,6 @@ import FAQItem from "../scripts/FAQitem";
 export default function Help() {
   return (
     <>
-      <Navbar />
 
       <section className="bg-[#08080f] py-24 md:py-32 text-[#85859b]">
         <div className="grid grid-cols-12">

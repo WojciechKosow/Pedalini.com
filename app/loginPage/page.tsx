@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function LoginPage() {
@@ -78,7 +77,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
 
       <section className="flex-1 flex items-center justify-center bg-[#08080f] font-sans">
         <div className="container px-4 mx-auto">
