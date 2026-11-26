@@ -28,16 +28,8 @@ export default function Help() {
               >
                 Browse courses
               </Link>
-              <Link
-                href="/registerPage"
-                className="bg-[#12121e] w-full h-35 rounded-xl flex items-center justify-center"
-              >
-                My Library
-              </Link>
-              <Link
-                href="/registerPage"
-                className="bg-[#12121e] w-full h-35 rounded-xl flex items-center justify-center"
-              >
+              <button className=" ">My Library</button>
+              <button className="bg-[#12121e] w-full h-35 rounded-xl">
                 Create course
               </Link>
             </div>
